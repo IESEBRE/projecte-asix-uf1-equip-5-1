@@ -2,7 +2,88 @@ public class Person {
  // Constructor
  void Person (){}
  boolean talking () {
- System.out.println ("Hola, que tal!");
- return true;
+ System.out.println("Hola, que tal!");
+        System.out.println("Tria una pregunta les has de respondre totes");
+        while (true) {
+            System.out.println("1. Quin tipus de persona ets?");
+            System.out.println("2. Quin esport t’agrada?");
+            System.out.println("3. Quin és el teu número favorit entre 0 i ...? ");
+            System.out.println("4. Sabries llista tots els nombres parells resultants de la multiplicació, entre el valor enter de a i b, on el valor de a creixerà fins b, b decreixerà fins a ? ");
+            System.out.println("5. Juguem a pedra paper i tisora? ");
+            System.out.println("6. Posa-li un nom:");
+            System.out.println("7. Pots recordar-me la nostra conversa?");
+            System.out.println("8. Sortida de l’aplicació.");
+            //variables
+            byte pregunta;
+            String nom=("");
+            String jugada1;
+            double jugada2;
+            int puntuacio1 = 0;
+            int puntuacio2 = 0;
+            Scanner entrada = new Scanner(System.in);
+            Scanner entrada6 = new Scanner(System.in);
+            pregunta = entrada.nextByte();
+            String win;
+            //proces
+            switch (pregunta) {
+                case 1:
+                    continue;
+                case 2:
+                    continue;
+                case 3:
+                    continue;
+                case 4:
+                    continue;
+                case 5:
+                    while (puntuacio1 < 5 || puntuacio2 < 5) {
+                        System.out.println("digues pedra ,paper o tisora una de les 3 ");
+                        jugada1 = entrada6.nextLine();
+                        jugada2 = (Math.random() * 3 + 1);
+                        //1 es paper 2 es pedra 3 es tisores
+                        if (jugada1.equalsIgnoreCase("pedra") && jugada2 == 1 || jugada1.equalsIgnoreCase("tisora") && jugada2 == 2 || jugada1.equalsIgnoreCase("paper") && jugada2 == 3) {
+                            System.out.println("Jugador1");
+                            puntuacio1++;
+
+                        }
+                        if (jugada2 == 2 && jugada1.equalsIgnoreCase("paper") || jugada2 == 3 && jugada1.equalsIgnoreCase("pedra") || jugada2 == 1 && jugada1.equalsIgnoreCase("tisora")) {
+                            System.out.println("Jugador2");
+                            puntuacio2++;
+                        }
+
+
+                        if (jugada1.equalsIgnoreCase("pedra") && jugada2 == 2 || jugada1.equalsIgnoreCase("tisora") && jugada2 == 3 || jugada1.equalsIgnoreCase("paper") && jugada2 == 2) {
+                            System.out.println("EMPAT");
+                            puntuacio1++;
+                            puntuacio2++;
+                        }
+                        if (puntuacio1 == 5) {
+                            System.out.println("Has guanyat");
+                            win = ("tu");
+                            continue;
+                        } else if (puntuacio2 == 5) {
+                            System.out.println("Has perdut");
+                            win = (nom);
+                            continue;
+                        }
+                    }
+
+                case 6:
+                    System.out.println("Quin nom em vols posar?");
+                    nom = entrada6.nextLine();
+
+                    System.out.println("Gràcies, m’agrada aquest nom");
+                    continue;
+
+                case 7:
+                    System.out.println("el meu nom es nom"+(nom)+ "el meu sexe es"++ sexe el número favorit, qui ha guanyat.");
+                    continue;
+                case 8:
+                    return false;
+
+
+            }
+            return true;
+        }
+    }
  }
 }
