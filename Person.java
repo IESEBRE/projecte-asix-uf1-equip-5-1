@@ -21,13 +21,13 @@ public class Person {
             //variables
             byte pregunta;
             //nom
-            String nom = null;
+            String nom =" ";
             //pedra paper tizora
             String jugada1;
             double jugada2;
             int puntuacio1 = 0;
             int puntuacio2 = 0;
-            String win;
+            String win="";
             //escaners
             Scanner entrada = new Scanner(System.in);
             Scanner entrada6 = new Scanner(System.in);
@@ -37,17 +37,16 @@ public class Person {
             int b;
             int countb;
             int counta;
-            int mult;
             //tipusdepersona
             int num;
-            String sexe;
+            String sexe ="";
             //esport
             int esport;
-            String tria;
+            String tria="";
             //nombre preferit
             int rang;
             int numt;
-            int numtv;//guardem el nombre
+            int numtv=0;//guardem el nombre
             //proces
             switch (pregunta) {
                 case 1:
@@ -117,7 +116,10 @@ public class Person {
                     rang = entrada6.nextInt();
                     numt = (rang / 2);
                     numtv = (rang / 2);//guardem el nombre
-                    while (numt >= 0) System.out.println(numt--);
+                    for (numt = 0 ; numt <= rang; numt++) {
+                            System.out.print(numt + " ");
+                        }
+                   System.out.print( "aquest es el nombre");
 
 
                     continue;
