@@ -1,4 +1,3 @@
-import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
 public class Person {
@@ -116,10 +115,11 @@ public class Person {
                     rang = entrada6.nextInt();
                     numt = (rang / 2);
                     numtv = (rang / 2);//guardem el nombre
-                    for (numt = 0 ; numt <= rang; numt++) {
-                            System.out.print(numt + " ");
-                        }
-                   System.out.print( "aquest es el nombre");
+                    for (numt = 0 ; numt <= rang/2; numt++) {
+                        System.out.print(numt + " ");
+                    }
+                    System.out.print( "aquest es el nombre");
+                    System.out.println();
 
 
                     continue;
