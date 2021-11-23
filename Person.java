@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 
 public class Person {
@@ -20,13 +21,13 @@ public class Person {
             //variables
             byte pregunta;
             //nom
-            String nom =" ";
+            String nom = " ";
             //pedra paper tizora
             String jugada1;
             double jugada2;
             int puntuacio1 = 0;
             int puntuacio2 = 0;
-            String win="";
+            String win = "";
             //escaners
             Scanner entrada = new Scanner(System.in);
             Scanner entrada6 = new Scanner(System.in);
@@ -34,18 +35,16 @@ public class Person {
             //multiplicacions
             int a;
             int b;
-            int countb;
-            int counta;
             //tipusdepersona
             int num;
-            String sexe ="";
+            String sexe = "";
             //esport
             int esport;
-            String tria="";
+            String tria = "";
             //nombre preferit
             int rang;
             int numt;
-            int numtv=0;//guardem el nombre
+            int numtv = 0;//guardem el nombre
             //proces
             switch (pregunta) {
                 case 1:
@@ -115,10 +114,10 @@ public class Person {
                     rang = entrada6.nextInt();
                     numt = (rang / 2);
                     numtv = (rang / 2);//guardem el nombre
-                    for (numt = 0 ; numt <= rang/2; numt++) {
+                    for (numt = 0; numt <= rang / 2; numt++) {
                         System.out.print(numt + " ");
                     }
-                    System.out.print( "aquest es el nombre");
+                    System.out.print("aquest es el nombre");
                     System.out.println();
 
 
@@ -177,7 +176,7 @@ public class Person {
                     continue;
 
                 case 7:
-                    System.out.println(" el meu nom es nom" + (nom) + " el meu sexe es"+ (sexe) +" el meu Esport preferit es "+(tria)+" el meu número preferit es"+(numtv)+" ha guanyat" + (win));
+                    System.out.println(" el meu nom es nom" + (nom) + " el meu sexe es" + (sexe) + " el meu Esport preferit es " + (tria) + " el meu número preferit es" + (numtv) + " ha guanyat" + (win));
 
 
                     continue;
