@@ -1,7 +1,5 @@
 
-import java.util.Scanner;
-
-public class Person {
+{
     // Constructor
     void Person() {
     }
@@ -9,6 +7,7 @@ public class Person {
     boolean talking() {
         System.out.println("Hola, que tal!");
         System.out.println("Tria una pregunta les has de respondre totes");
+
         while (true) {
             System.out.println("1. Quin tipus de persona ets?");
             System.out.println("2. Quin esport t’agrada?");
@@ -21,7 +20,7 @@ public class Person {
             //variables
             byte pregunta;
             //nom
-            String nom = " ";
+            String nom = "";
             //pedra paper tizora
             String jugada1;
             double jugada2;
@@ -30,44 +29,49 @@ public class Person {
             String win = "";
             //escaners
             Scanner entrada = new Scanner(System.in);
-            Scanner entrada6 = new Scanner(System.in);
             pregunta = entrada.nextByte();
             //multiplicacions
             int a;
             int b;
             //tipusdepersona
             int num;
-            String sexe = "";
+            String pepe=null;
+            String sexe =pepe;
+
             //esport
             int esport;
             String tria = "";
             //nombre preferit
             int rang;
-            int numt;
-            int numtv = 0;//guardem el nombre
+            int numt = 0;
+            int numtv = numt;//guardem el nombre
+            //sortida
+            String obció;
             //proces
             switch (pregunta) {
                 case 1:
+                    Scanner entrada1 = new Scanner(System.in);
                     System.out.println("Digues quin tipus persona soc amb un numero del 1 al 100");
-                    num = entrada6.nextInt();
+                    num = entrada1.nextInt();
                     if (num % 2 == 0 && num % 3 == 0) {
                         System.out.println("No binari");
-                        sexe = ("No binari");
+                        pepe = ("No binari");
                     } else {
                         if (num % 3 == 0) {
                             System.out.println("Dona");
-                            sexe = ("Dona");
+                            pepe = ("Dona");
                         } else {
                             {
                                 if (num % 2 == 0) System.out.println("Home");
-                                sexe = ("Home");
+                                pepe = ("Home");
                             }
                         }
                     }
-                    continue;
+                    break;
                 case 2:
+                    Scanner entrada2 = new Scanner(System.in);
                     System.out.println("Digues un nombre del 1 al 10 aques sera el meu esport preferit");
-                    esport = entrada6.nextInt();
+                    esport = entrada2.nextInt();
                     if (esport == 1) {
                         System.out.println("Natació");
                         tria = ("Natació");
@@ -109,9 +113,10 @@ public class Person {
                         tria = ("Rugby");
                     }
 
-                    continue;
+                    break;
                 case 3:
-                    rang = entrada6.nextInt();
+                    Scanner entrada3 = new Scanner(System.in);
+                    rang = entrada3.nextInt();
                     numt = (rang / 2);
                     numtv = (rang / 2);//guardem el nombre
                     for (numt = 0; numt <= rang / 2; numt++) {
@@ -121,11 +126,12 @@ public class Person {
                     System.out.println();
 
 
-                    continue;
+                    break;
                 case 4:
+                    Scanner entrada4 = new Scanner(System.in);
                     System.out.println("Quins dos nombres hem de multiplicar?");
-                    a = entrada6.nextInt();
-                    b = entrada6.nextInt();
+                    a = entrada4.nextInt();
+                    b = entrada4.nextInt();
                     for (int i = a; i <= b; i++) {
                         System.out.println();
                         for (int j = b; j >= 1; j--) {
@@ -134,58 +140,69 @@ public class Person {
 
                     }
                     System.out.println();
-                    continue;
+                    break;
 
                 case 5:
+                    Scanner entrada5 = new Scanner(System.in);
                     while (puntuacio1 < 5 || puntuacio2 < 5) {
                         System.out.println("digues pedra ,paper o tisora una de les 3 ");
-                        jugada1 = entrada6.nextLine();
+                        jugada1 = entrada5.nextLine();
                         jugada2 = (Math.random() * 3 + 1);
                         //1 es paper 2 es pedra 3 es tisores
-                        if (jugada1.equalsIgnoreCase("pedra") && jugada2 == 1 || jugada1.equalsIgnoreCase("tisora") && jugada2 == 2 || jugada1.equalsIgnoreCase("paper") && jugada2 == 3) {
+                        if (jugada1.equals("pedra") && jugada2 == 1 || jugada1.equals("tisora") && jugada2 == 2 || jugada1.equals("paper") && jugada2 == 3) {
                             System.out.println("Jugador1");
                             puntuacio1++;
 
-                        }
-                        if (jugada2 == 2 && jugada1.equalsIgnoreCase("paper") || jugada2 == 3 && jugada1.equalsIgnoreCase("pedra") || jugada2 == 1 && jugada1.equalsIgnoreCase("tisora")) {
-                            System.out.println("Jugador2");
-                            puntuacio2++;
+                        }else {
+                            if (jugada2 == 2 && jugada1.equals("paper") || jugada2 == 3 && jugada1.equals("pedra") || jugada2 == 1 && jugada1.equals("tisora")) {
+                                System.out.println("Jugador2");
+                                puntuacio2++;
+                            }else  if (jugada1.equals("pedra") && jugada2 == 2 || jugada1.equals("tisora") && jugada2 == 3 || jugada1.equals("paper") && jugada2 == 2) {
+                                System.out.println("EMPAT");
+                                puntuacio1++;
+                                puntuacio2++;
+                            }
                         }
 
 
-                        if (jugada1.equalsIgnoreCase("pedra") && jugada2 == 2 || jugada1.equalsIgnoreCase("tisora") && jugada2 == 3 || jugada1.equalsIgnoreCase("paper") && jugada2 == 2) {
-                            System.out.println("EMPAT");
-                            puntuacio1++;
-                            puntuacio2++;
-                        }
                         if (puntuacio1 == 5) {
                             System.out.println("Has guanyat");
                             win = ("tu");
-                            continue;
+                            break;
                         } else if (puntuacio2 == 5) {
                             System.out.println("Has perdut");
                             win = (nom);
-                            continue;
+                            break;
                         }
                     }
 
                 case 6:
+                    Scanner entrada6 = new Scanner(System.in);
                     System.out.println("Quin nom em vols posar?");
                     nom = entrada6.nextLine();
                     System.out.println("Gràcies, m’agrada aquest nom");
-                    continue;
+                    break;
 
                 case 7:
-                    System.out.println(" el meu nom es nom" + (nom) + " el meu sexe es" + (sexe) + " el meu Esport preferit es " + (tria) + " el meu número preferit es" + (numtv) + " ha guanyat" + (win));
+                    System.out.println(" el meu nom es" + nom + " el meu sexe es" + sexe + " el meu Esport preferit es " + tria + " el meu número preferit es" + numtv + " ha guanyat" + win);
 
 
-                    continue;
+                    break;
                 case 8:
-                    return false;
+                    Scanner entrada8 = new Scanner(System.in);
+                    System.out.println("estas segur de que vols tancar?(digues si o no)");
+                    obció = entrada8.nextLine();
+                    if (obció.equals("si")) {
+                        return true;
+                    }
+                    if (obció.equals("no")) {
+                        break;
+                    }
 
 
             }
-            return true;
+
         }
+
     }
 }
