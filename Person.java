@@ -1,5 +1,9 @@
+import java.util.Random;
+import java.util.Scanner;
 
-{
+
+
+public class Person {
     // Constructor
     void Person() {
     }
@@ -35,8 +39,8 @@
             int b;
             //tipusdepersona
             int num;
-            String pepe=null;
-            String sexe =pepe;
+            String pepe = "";
+            String sexe = pepe;
 
             //esport
             int esport;
@@ -147,20 +151,23 @@
                     while (puntuacio1 < 5 || puntuacio2 < 5) {
                         System.out.println("digues pedra ,paper o tisora una de les 3 ");
                         jugada1 = entrada5.nextLine();
-                        jugada2 = (Math.random() * 3 + 1);
+                        jugada2 = new Random().nextInt(3)+1;
+                        System.out.println(jugada2);
                         //1 es paper 2 es pedra 3 es tisores
-                        if (jugada1.equals("pedra") && jugada2 == 1 || jugada1.equals("tisora") && jugada2 == 2 || jugada1.equals("paper") && jugada2 == 3) {
-                            System.out.println("Jugador1");
+                        if ((jugada1.equals("pedra") && jugada2 == 1 )|| (jugada1.equals("tisora") && jugada2 == 2 )|| (jugada1.equals("paper") && jugada2 == 3)) {
                             puntuacio1++;
-
-                        }else {
-                            if (jugada2 == 2 && jugada1.equals("paper") || jugada2 == 3 && jugada1.equals("pedra") || jugada2 == 1 && jugada1.equals("tisora")) {
-                                System.out.println("Jugador2");
+                            System.out.println("Jugador1");
+                        } else {
+                            if ((jugada2 == 2 && jugada1.equals("paper") )||(jugada2 == 3 && jugada1.equals("pedra") )|| (jugada2 == 1 && jugada1.equals("tisora"))) {
                                 puntuacio2++;
-                            }else  if (jugada1.equals("pedra") && jugada2 == 2 || jugada1.equals("tisora") && jugada2 == 3 || jugada1.equals("paper") && jugada2 == 2) {
-                                System.out.println("EMPAT");
+                                System.out.println("Jugador2");
+
+                            } else if ((jugada1.equals("pedra") && jugada2 == 2 )|| (jugada1.equals("tisora") && jugada2 == 3 )|| (jugada1.equals("paper") && jugada2 == 2) ){
                                 puntuacio1++;
                                 puntuacio2++;
+                                System.out.println("EMPAT");
+
+
                             }
                         }
 
@@ -175,7 +182,7 @@
                             break;
                         }
                     }
-
+                        break;
                 case 6:
                     Scanner entrada6 = new Scanner(System.in);
                     System.out.println("Quin nom em vols posar?");
