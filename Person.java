@@ -1,3 +1,4 @@
+
 import java.util.Random;
 import java.util.Scanner;
 
@@ -9,9 +10,48 @@ public class Person {
     }
 
     boolean talking() {
+
         System.out.println("Hola, que tal!");
         System.out.println("Tria una pregunta les has de respondre totes");
+        System.out.println("1. Quin tipus de persona ets?");
+        System.out.println("2. Quin esport t’agrada?");
+        System.out.println("3. Quin és el teu número favorit entre 0 i ...? ");
+        System.out.println("4. Sabries llista tots els nombres parells resultants de la multiplicació, entre el valor enter de a i b, on el valor de a creixerà fins b, b decreixerà fins a ? ");
+        System.out.println("5. Juguem a pedra paper i tisora? ");
+        System.out.println("6. Posa-li un nom:");
+        System.out.println("7. Pots recordar-me la nostra conversa?");
+        System.out.println("8. Sortida de l’aplicació.");
+        //variables
+        //escaners
+        Scanner entrada = new Scanner(System.in);
+        byte pregunta;
+        //nom
+        String nom = "";
+        //pedra paper tizora
+        String jugada1;
+        double jugada2;
+        int puntuacio1 =0;
+        int puntuacio2 = 0;
+        String win = "";
 
+        //multiplicacions
+        int a;
+        int b;
+        //tipusdepersona
+        int num;
+
+        String sexe = "";
+
+        //esport
+        int esport;
+        String tria = "";
+        //nombre preferit
+        int rang;
+        int numt = 0;
+        int numtv = numt;//guardem el nombre
+        //sortida
+        String obcio;
+        //proces
         while (true) {
             System.out.println("1. Quin tipus de persona ets?");
             System.out.println("2. Quin esport t’agrada?");
@@ -21,37 +61,7 @@ public class Person {
             System.out.println("6. Posa-li un nom:");
             System.out.println("7. Pots recordar-me la nostra conversa?");
             System.out.println("8. Sortida de l’aplicació.");
-            //variables
-            byte pregunta;
-            //nom
-            String nom = "";
-            //pedra paper tizora
-            String jugada1;
-            double jugada2;
-            int puntuacio1 = 0;
-            int puntuacio2 = 0;
-            String win = "";
-            //escaners
-            Scanner entrada = new Scanner(System.in);
             pregunta = entrada.nextByte();
-            //multiplicacions
-            int a;
-            int b;
-            //tipusdepersona
-            int num;
-            String pepe = "";
-            String sexe = pepe;
-
-            //esport
-            int esport;
-            String tria = "";
-            //nombre preferit
-            int rang;
-            int numt = 0;
-            int numtv = numt;//guardem el nombre
-            //sortida
-            String obció;
-            //proces
             switch (pregunta) {
                 case 1:
                     Scanner entrada1 = new Scanner(System.in);
@@ -59,15 +69,15 @@ public class Person {
                     num = entrada1.nextInt();
                     if (num % 2 == 0 && num % 3 == 0) {
                         System.out.println("No binari");
-                        pepe = ("No binari");
+                        sexe = ("No binari");
                     } else {
                         if (num % 3 == 0) {
                             System.out.println("Dona");
-                            pepe = ("Dona");
+                            sexe = ("Dona");
                         } else {
                             {
                                 if (num % 2 == 0) System.out.println("Home");
-                                pepe = ("Home");
+                                sexe = ("Home");
                             }
                         }
                     }
@@ -119,9 +129,10 @@ public class Person {
 
                     break;
                 case 3:
+                    System.out.println("donam un rang");
                     Scanner entrada3 = new Scanner(System.in);
                     rang = entrada3.nextInt();
-                    numt = (rang / 2);
+
                     numtv = (rang / 2);//guardem el nombre
                     for (numt = 0; numt <= rang / 2; numt++) {
                         System.out.print(numt + " ");
@@ -191,18 +202,18 @@ public class Person {
                     break;
 
                 case 7:
-                    System.out.println(" el meu nom es" + nom + " el meu sexe es" + sexe + " el meu Esport preferit es " + tria + " el meu número preferit es" + numtv + " ha guanyat" + win);
+                    System.out.println(" el meu nom es " + nom + " el meu sexe es " + sexe + " el meu Esport preferit es " + tria + " el meu número preferit es " + numtv + " ha guanyat " + win);
 
 
                     break;
                 case 8:
                     Scanner entrada8 = new Scanner(System.in);
                     System.out.println("estas segur de que vols tancar?(digues si o no)");
-                    obció = entrada8.nextLine();
-                    if (obció.equals("si")) {
+                    obcio = entrada8.nextLine();
+                    if (obcio.equals("si")) {
                         return true;
                     }
-                    if (obció.equals("no")) {
+                    if (obcio.equals("no")) {
                         break;
                     }
 
@@ -212,4 +223,3 @@ public class Person {
         }
 
     }
-}
