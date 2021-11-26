@@ -1,4 +1,5 @@
 
+
 import java.util.Random;
 import java.util.Scanner;
 
@@ -13,14 +14,7 @@ public class Person {
 
         System.out.println("Hola, que tal!");
         System.out.println("Tria una pregunta les has de respondre totes");
-        System.out.println("1. Quin tipus de persona ets?");
-        System.out.println("2. Quin esport t’agrada?");
-        System.out.println("3. Quin és el teu número favorit entre 0 i ...? ");
-        System.out.println("4. Sabries llista tots els nombres parells resultants de la multiplicació, entre el valor enter de a i b, on el valor de a creixerà fins b, b decreixerà fins a ? ");
-        System.out.println("5. Juguem a pedra paper i tisora? ");
-        System.out.println("6. Posa-li un nom:");
-        System.out.println("7. Pots recordar-me la nostra conversa?");
-        System.out.println("8. Sortida de l’aplicació.");
+
         //variables
         //escaners
         Scanner entrada = new Scanner(System.in);
@@ -38,7 +32,7 @@ public class Person {
         int a;
         int b;
         //tipusdepersona
-        int num;
+        int num = 0;
 
         String sexe = "";
 
@@ -48,7 +42,6 @@ public class Person {
         //nombre preferit
         int rang;
         int numt = 0;
-        int numtv = numt;//guardem el nombre
         //sortida
         String obcio;
         //proces
@@ -132,10 +125,9 @@ public class Person {
                     System.out.println("donam un rang");
                     Scanner entrada3 = new Scanner(System.in);
                     rang = entrada3.nextInt();
-
-                    numtv = (rang / 2);//guardem el nombre
                     for (numt = 0; numt <= rang / 2; numt++) {
                         System.out.print(numt + " ");
+
                     }
                     System.out.print("aquest es el nombre");
                     System.out.println();
@@ -202,7 +194,7 @@ public class Person {
                     break;
 
                 case 7:
-                    System.out.println(" el meu nom es " + nom + " el meu sexe es " + sexe + " el meu Esport preferit es " + tria + " el meu número preferit es " + numtv + " ha guanyat " + win);
+                    System.out.println(" el meu nom es " + nom + " el meu sexe es " + sexe + " el meu Esport preferit es " + tria + " el meu número preferit es " + (numt-1) + " ha guanyat " + win);
 
 
                     break;
@@ -223,3 +215,4 @@ public class Person {
         }
 
     }
+}
