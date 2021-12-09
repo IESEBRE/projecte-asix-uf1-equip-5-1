@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class Alien {
@@ -94,22 +95,41 @@ public class Alien {
                     break;
 
                 case 4:
-
-                    primer = entrada.nextFloat();
-                    segon = entrada.nextFloat();
-                    for (float i = primer; i <= (float) ((primer + segon) / 2.0); i = (float) (i + 0.1)) {
-                        if (i % 2 == 1) System.out.printf("%2.1f ", i);
-                        System.out.println();
-//               for(float j = segon;j >= (float) ((primer + segon) / 2.0); j= (float) (j-0.1)){
-//                   System.out.printf("%2.1f ",j);
-//               }
-                    }
+		        
+			float primer;
+			float segon;
+			primer = entrada.nextFloat();
+			segon = entrada.nextFloat();
+			for (float i = primer; i <= (float) ((primer + segon) / 2.0); i = (float) (i + 0.1)) {
+			    System.out.printf("%2.1f ", i);
+			    System.out.println();
+			    for (float j = segon; j >= (float) ((primer + segon) / 2.0); j = (float) (j - 0.1)) {
+				System.out.printf("%2.1f ", j);
+			    }
+			}
                     break;
                 case 5:
-                    float numero1;
-                    float numero2;
-                    numero1 = entrada.nextFloat();
-                    numero2 = entrada.nextFloat();
+                    float j1;
+                    float in = 1.0F;
+                    float fi = 5.0F;
+                    Random random = new Random();
+                    float baixell = random.nextFloat() * (fi - in);
+                    baixell = Math.round(baixell * 10.0F) / 10.0F;
+                    int intents = 0;
+                    float resultat;
+                    do {
+                        j1 = entrada.nextFloat();
+                        resultat=j1-baixell;
+                        if (j1 == baixell) {
+                            System.out.println("Tocat");
+                            break;
+                        } else if (resultat <= 0.3F ) System.out.println("Estas a prop");
+                        else if (resultat> 0.3F && resultat <= 1.0F) System.out.println("Estas a lluny");
+                        else if (resultat> 1.0F) System.out.println("Estas mooolt lluny");
+                        intents++;
+                    }
+                    while (intents <= 10) ;
+                    
 
                     break;
                 case 6:
