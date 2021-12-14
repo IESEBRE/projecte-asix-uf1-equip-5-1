@@ -83,57 +83,58 @@ public class Person {
                     ordre[0] = true;
                     break;
                 case 2://2
-                    if (ordre[0] ||ordre[1]) {
+                    if (ordre[0] && ordre[1]==false) {
 
                         if (mostrar) System.out.println("Digues un nombre del 1 al 10 aques sera el meu esport preferit");
                         esport = entrada.nextInt();
                         if (esport == 1) {
-                            System.out.println("Natació");
-                            tria = ("Natació");
+                            System.out.println("Hoquei");
+                            tria = ("hoquei");
                         }
                         if (esport == 2) {
-                            System.out.println("Futbol");
-                            tria = ("Futbol");
+                            System.out.println("Basquet");
+                            tria = ("basquet");
                         }
                         if (esport == 3) {
-                            System.out.println("Voleibol");
-                            tria = ("Voleibol");
+                            System.out.println("Handbol");
+                            tria = ("handbol");
                         }
                         if (esport == 4) {
-                            System.out.println("Hoquei");
-                            tria = ("Hoquei");
+                            System.out.println("Patinatge");
+                            tria = ("patinatge");
                         }
                         if (esport == 5) {
-                            System.out.println("Basquet");
-                            tria = ("Basquet");
+                            System.out.println("Rugbi");
+                            tria = ("rugbi");
                         }
                         if (esport == 6) {
-                            System.out.println("Badminton");
-                            tria = ("Badminton");
+                            System.out.println("Ritmica");
+                            tria = ("ritmica");
                         }
                         if (esport == 7) {
-                            System.out.println("Beisbol");
-                            tria = ("Beisbol");
+                            System.out.println("Natacio");
+                            tria = ("natacio");
                         }
                         if (esport == 8) {
-                            System.out.println("Handbol");
-                            tria = ("Handbol");
+                            System.out.println("Judo");
+                            tria = ("judo");
                         }
                         if (esport == 9) {
-                            System.out.println("Hockey");
-                            tria = ("Hockey");
+                            System.out.println("Atletisme");
+                            tria = ("atletisme");
                         }
                         if (esport == 10) {
-                            System.out.println("Rugby");
-                            tria = ("Rugby");
+                            System.out.println("Ciclisme");
+                            tria = ("ciclisme");
                         }
                         conveses+=tria + "\n";
                         ordre[1] = true;
                         break;
                     } else {System.out.println("Has de seguir les opcions en ordre i sense repetir. Torna-ho a intentar!!");
                         break;}
+
                 case 3://3
-                    if (ordre[1] ||ordre[2]) {
+                    if (ordre[1] && ordre[2]==false) {
                         if (mostrar)System.out.println("donam un rang");
 
                         num2 = entrada.nextInt();
@@ -149,7 +150,7 @@ public class Person {
                     }else {System.out.println("Has de seguir les opcions en ordre i sense repetir. Torna-ho a intentar!!");
                         break;}
                 case 4://4
-                    if (ordre[2] || ordre[3]) {
+                    if (ordre[2] && ordre[3]==false) {
 
                         if (mostrar) System.out.println("Quins dos nombres hem de multiplicar?");
                         a = entrada.nextInt();
@@ -159,11 +160,12 @@ public class Person {
                             conveses+="\n";
                             for (int j = b; j >= a; j--) {
                                 if ((i * j) % 2 == 0){ System.out.print(i * j + "\t");
-                                conveses+= i * j + "\t";}
+                                    conveses+= i * j + "\t";}
                             }
 
-                        }
-           //             System.out.println();
+                        }System.out.println();
+                        conveses+="\n";
+                        //             System.out.println();
                         ordre[3] = true;
                         break;
                     }else {System.out.println("Has de seguir les opcions en ordre i sense repetir. Torna-ho a intentar!!");
@@ -171,7 +173,7 @@ public class Person {
                 case 5://5
 
                     if (mostrar) {
-                        if (ordre[3] || ordre[4]) {
+                        if (ordre[3]&& ordre[4]==false) {
 
                             while (puntuacio1 < 5 || puntuacio2 < 5) {
                                 if (mostrar) System.out.println("digues pedra ,paper o tisora una de les 3 ");
@@ -209,15 +211,17 @@ public class Person {
 
                         } else {System.out.println("Has de seguir les opcions en ordre i sense repetir. Torna-ho a intentar!!");
                            }
-                    }else System.out.println("No es pot jugar en mode JOEL!!");
+                    }else {System.out.println("No es pot jugar en mode JOEL!!");
+                    ordre[4]=true;}
                     break;
                 case 6://6
-                    if (ordre[4] || ordre[5]) {
+                    if (ordre[4] &&  ordre[5]==false) {
 
                         if (mostrar) System.out.println("Quin nom em vols posar?");
+
                         nom = entrada.nextLine();
                         System.out.println("Gracies,m'agrada molt el nom de " + nom);
-                        conveses += "Gracies,m'agrada molt el nom de " + nom + "\n";
+                        conveses += "Gracies, m'agrada molt el nom de " + nom + "\n";
                         ordre[5] = true;
                         break;
                     } else {
@@ -237,6 +241,7 @@ public class Person {
                 case 8://8
                     if (ordre[6] == true) {
                             return conveses;
+
                     }else {System.out.println("Has de seguir les opcions en ordre i sense repetir. Torna-ho a intentar!!");
                         break;}
 
@@ -246,4 +251,5 @@ public class Person {
 
     }
 }
+
 
