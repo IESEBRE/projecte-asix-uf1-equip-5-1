@@ -1,10 +1,10 @@
 package codi;
 
 import java.util.Random;
-import java.util.Scanner;
 
-import static codi.Main.mostrar;
 import static codi.Main.entrada;
+import static codi.Main.mostrar;
+
 public class Animal {
     void Animal() {
     }
@@ -17,7 +17,9 @@ public class Animal {
         char caracterfinal = ' ';
         int cout = 0;
         String obci;
-        String conveses="";
+        String conveses = "";
+        String esport = "";
+        String VLetra;
         while (true) {
 
             System.out.println("");
@@ -41,8 +43,6 @@ public class Animal {
             pregunta = entrada.nextByte();
             switch (pregunta) {
                 case 1:
-
-
                     if (mostrar) System.out.println("Defineix quin tipus d'animal ets:");
                     char animal = entrada.next().charAt(0);
                     int difG = 'g' - animal;
@@ -52,52 +52,77 @@ public class Animal {
                     if (difG >= -3 || animal <= 'g') {
                         System.out.println("Gos");
                         animalfinal = "gos";
+                        conveses += ("Gos" + "\n");
 
                     } else if (difS <= -3 || animal >= 's') {
                         System.out.println("Serp");
                         animalfinal = "serp";
+                        conveses += ("Serp" + "\n");
                     } else {
                         System.out.println("Mono");
-                        animalfinal = "gos";
+                        animalfinal = "mono";
+                        conveses += ("Mono" + "\n");
                     }
+                    System.out.println("No esta amb " + animal + ", el mes proxim es " + animalfinal);
+                    conveses += ("No esta amb " + animal + ", el mes proxim es " + animalfinal);
                     ordre[0] = true;
                     break;
 
                 case 2:
-                    if (ordre[0] && ordre[1]==false) {
-                        String VLetra;
-                        if (mostrar) System.out.println("A que t'agrada jugar?");
-
+                    if (ordre[0] && ordre[1] == false) {
+                        if (mostrar) System.out.println("A que t'agrada jugar? ");
                         VLetra = entrada.nextLine();
+
                         if (VLetra.equals("A")) {
-                            System.out.println("Atletisme");
-                        } else if (VLetra.equals("B")) {
-                            System.out.println("Boxeig");
-                        } else if (VLetra.equals("C")) {
-                            System.out.println("Ciclisme");
-                        } else if (VLetra.equals("D")) {
-                            System.out.println("Dansa");
-                        } else if (VLetra.equals("E")) {
-                            System.out.println("Esgrima");
-                        } else if (VLetra.equals("F")) {
-                            System.out.println("Futbol");
-                        } else if (VLetra.equals("G")) {
-                            System.out.println("Golf");
-                        } else if (VLetra.equals("H")) {
-                            System.out.println("Handbol");
-                        } else if (VLetra.equals("I")) {
-                            System.out.println("Indiaca");
-                        } else if (VLetra.equals("J")) {
-                            System.out.println("Judo");
+                            System.out.println("Pilla-pilla");
+                            esport = "pilla-pilla";
                         }
+                        if (VLetra.equals("B")) {
+                            System.out.println("Pilota");
+                            esport = "pilota";
+                        }
+                        if (VLetra.equals("C")) {
+                            System.out.println("Saltar");
+                            esport = "saltar";
+                        }
+                        if (VLetra.equals("D")) {
+                            System.out.println("Circuit");
+                            esport = "circuit";
+                        }
+                        if (VLetra.equals("E")) {
+                            System.out.println("Correr");
+                            esport = "correr";
+                        }
+                        if (VLetra.equals("F")) {
+                            System.out.println("Dinamica");
+                            esport = "dinamica";
+                        }
+                        if (VLetra.equals("G")) {
+                            System.out.println("Vols");
+                            esport = "vols";
+                        }
+                        if (VLetra.equals("H")) {
+                            System.out.println("Amagar");
+                            esport = "amagar";
+                        }
+                        if (VLetra.equals("I")) {
+                            System.out.println("Cercar");
+                            esport = "cercar";
+                        }
+                        if (VLetra.equals("J")) {
+                            System.out.println("Estirar");
+                            esport = "estirar";
+                        }
+                        conveses += esport + "\n";
                         ordre[1] = true;
                         break;
                     } else {
                         System.out.println("Has de seguir les opcions en ordre i sense repetir. Torna-ho a intentar!!");
-                        break;
+
                     }
+                    break;
                 case 3:
-                    if (ordre[1] && ordre[2]==false) {
+                    if (ordre[1] && ordre[2] == false) {
                         char Caracter;
                         char impresio = 'A';
                         if (mostrar) System.out.println("Quin es el teu caracter favorit?");
@@ -108,9 +133,12 @@ public class Animal {
 
                         while (impresio != (char) (contador + 'A')) {
                             System.out.print(impresio + ",");
+                            conveses += (impresio + ",");
                             ++impresio;
+
                         }
-                        System.out.printf(String.valueOf("el caracter que has elegit és " + caracterfinal + ","));
+                        System.out.printf(String.valueOf("...He triat el " + caracterfinal + "!"));
+                        conveses += ("...He triat el " + caracterfinal + "!") + "\n";
                         ordre[2] = true;
                         break;
                     } else {
@@ -118,7 +146,7 @@ public class Animal {
                         break;
                     }
                 case 4:
-                    if (ordre[2] && ordre[3]==false) {
+                    if (ordre[2] && ordre[3] == false) {
                         ordre[3] = true;
                         break;
 
@@ -129,7 +157,7 @@ public class Animal {
                     }
                 case 5:
                     if (mostrar) {
-                        if (ordre[3]&& ordre[4]==false) {
+                        if (ordre[3] && ordre[4] == false) {
 
                             Random r = new Random();
                             if (mostrar) System.out.println("Tria un caracter per formar una onomatopeia: ");
@@ -155,39 +183,52 @@ public class Animal {
                                     cout++;
                                 }
                             }
-                            ordre[4]=true;
+                            ordre[4] = true;
                             break;
-                        }else {System.out.println("Has de seguir les opcions en ordre i sense repetir. Torna-ho a intentar!!");
-                            break;}
-                    }else {System.out.println("No es pot jugar en mode JOEL!!");
-                        ordre[4]=true;
-                    }break;
+                        } else {
+                            System.out.println("Has de seguir les opcions en ordre i sense repetir. Torna-ho a intentar!!");
+                            break;
+                        }
+                    } else {
+                        System.out.println("No es pot jugar en mode JOEL!!");
+                        ordre[4] = true;
+                    }
+                    break;
                 case 6:
-                    if (ordre[4] && ordre[5]==false) {
+                    if (ordre[4] && ordre[5] == false) {
                         if (mostrar) System.out.println("Dona'm un nom");
 
                         nomguardar = entrada.nextLine();
-                        System.out.println("Gràcies,m'agrada aquest nom.");
-                        ordre[5]=true;
+                        System.out.println("Gracies, m'agrada molt el nom de " + nomguardar);
+                        conveses += ("Gracies, m'agrada molt el nom de " + nomguardar);
+                        ordre[5] = true;
                         break;
-                    }else {System.out.println("Has de seguir les opcions en ordre i sense repetir. Torna-ho a intentar!!");
-                        break;}
+                    } else {
+                        System.out.println("Has de seguir les opcions en ordre i sense repetir. Torna-ho a intentar!!");
+                        break;
+                    }
                 case 7:
-                    if (ordre[5] && ordre[6]==false) {
-                        System.out.println("El meu nom es nom " + nomguardar + " soc un " + animalfinal + " el meu caràcter favorit es " + caracterfinal + " el total de onomatopeies es " + cout + ".");
-                        ordre[6]=true;
+                    if (ordre[5] && ordre[6] == false) {
+                        System.out.println("Em dic " + nomguardar + " i soc un " + animalfinal + ". El meu joc favorit es " + esport + ". El meu caracter favorit es el  " + caracterfinal + ".");
+                        conveses += ("Em dic " + nomguardar + " i soc un " + animalfinal + ". El meu joc favorit es " + esport + ". El meu caracter favorit es el  " + caracterfinal + "." + "\n");
+                        ordre[6] = true;
                         break;
-                    }else {System.out.println("Has de seguir les opcions en ordre i sense repetir. Torna-ho a intentar!!");
-                        break;}
+                    } else {
+                        System.out.println("Has de seguir les opcions en ordre i sense repetir. Torna-ho a intentar!!");
+                        break;
+                    }
 
                 case 8:
                     if (ordre[6] == true) {
                         return conveses;
-                    }else {System.out.println("Has de seguir les opcions en ordre i sense repetir. Torna-ho a intentar!!");
-                        break;}
+                    } else {
+                        System.out.println("Has de seguir les opcions en ordre i sense repetir. Torna-ho a intentar!!");
+                        break;
+                    }
             }
         }
 
 
     }
 }
+
