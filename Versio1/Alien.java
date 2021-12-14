@@ -1,9 +1,11 @@
 package codi;
 
-import java.util.Scanner;
 import java.util.Random;
-import static codi.Main.mostrar;
+import java.util.Scanner;
+
 import static codi.Main.entrada;
+import static codi.Main.mostrar;
+
 public class Alien {
     // Constructor
     void Alien() {
@@ -23,7 +25,7 @@ public class Alien {
         float primer;
         float segon;
         String nom;
-        String conveses="";
+        String conveses = "";
         String obcio;
         while (true) {
             if (mostrar) System.out.println("1. Quin tipus d’extraterrestre ets? ");
@@ -55,44 +57,54 @@ public class Alien {
                     } else System.out.println("Sou un Alien, et mataré ");
                     tipus = "assassi";
                     ordre[0] = true;
-                    conveses+=tipus + "\n";
+                    conveses += tipus + "\n";
                     break;
                 case 2:
-                    if (ordre[0] ||ordre[1]) {
+                    if (ordre[0] && ordre[1] == false) {
+                        if (mostrar) System.out.println("Introduix un numero float de 0,0-1,0: ");
                         num1 = entrada.nextFloat();
-                        if (mostrar) System.out.println("Introduix un numero float de 0.0-1.0: ");
+
                         if (num1 == (float) 0.1) {
                             System.out.println("Navegant");
-                            vitage= "Navegant";
-                        } else if (num1 == (float) 0.2) {
+                            vitage = "Navegant";
+                        }
+                        if (num1 == (float) 0.2) {
                             System.out.println("Flotant");
                             vitage = "Flotant";
-                        } else if (num1 == (float) 0.3) {
+                        }
+                        if (num1 == (float) 0.3) {
                             System.out.println("Propulsat");
                             vitage = "Propulsat";
-                        } else if (num1 == (float) 0.4) {
+                        }
+                        if (num1 == (float) 0.4) {
                             System.out.println("Patinant");
                             vitage = "Patinant";
-                        } else if (num1 == (float) 0.5) {
+                        }
+                        if (num1 == (float) 0.5) {
                             System.out.println("Caminant");
                             vitage = "Caminant";
-                        } else if (num1 == (float) 0.6) {
+                        }
+                        if (num1 == (float) 0.6) {
                             System.out.println("Coetejant");
                             vitage = "Coetejant";
-                        } else if (num1 == (float) 0.7) {
+                        }
+                        if (num1 == (float) 0.7) {
                             System.out.println("Planejant");
                             vitage = "Planejant";
-                        } else if (num1 == (float) 0.8) {
+                        }
+                        if (num1 == (float) 0.8) {
                             System.out.println("Corrent");
                             vitage = "Corrent";
-                        } else if (num1 == (float) 0.9) {
+                        }
+                        if (num1 == (float) 0.9) {
                             System.out.println("Saltant");
                             vitage = "Saltant";
-                        } else if (num1 == (float) 1.0) {
+                        }
+                        if (num1 == (float) 1.0) {
                             System.out.println("Levitant");
                             vitage = "Levitant";
                         }
-                        conveses+= vitage+"\n";
+                        conveses += vitage + "\n";
                         ordre[1] = true;
                         break;
                     } else {
@@ -100,14 +112,16 @@ public class Alien {
                         break;
                     }
                 case 3:
-                    if (ordre[1] ||ordre[2]) {
+                    if (ordre[1] && ordre[2] == false) {
                         num2 = entrada.nextFloat();
                         if (mostrar) System.out.println("Quin és el teu número favorit entre 0,0 i ...?");
                         for (num = (float) 0; num < num2 / 2.0; num = (float) (num + 0.1)) {
                             System.out.printf("%2.1f ", num);
+                            //    conveses+= "%2.1f ", num;
                             //System.out.println(num);
                         }
-                        System.out.println("...He triat el " + num2 / 2.0 +"!");
+                        System.out.println("...He triat el " + num2 / 2.0 + "!");
+                        conveses += ("...He triat el " + num2 / 2.0 + "!");
                         favorit = num2;
                         ordre[2] = true;
                         break;
@@ -116,7 +130,7 @@ public class Alien {
                         break;
                     }
                 case 4:
-                    if (ordre[2] || ordre[3]) {
+                    if (ordre[2] && ordre[3] == false) {
 
                         primer = entrada.nextFloat();
                         segon = entrada.nextFloat();
@@ -137,7 +151,7 @@ public class Alien {
                     }
                 case 5:
                     if (mostrar) {
-                        if (ordre[3] || ordre[4]) {
+                        if (ordre[3] && ordre[4] == false) {
                             float j1;
                             float in = 1.0F;
                             float fi = 5.0F;
@@ -159,31 +173,42 @@ public class Alien {
                             }
                             while (intents <= 10);
 
-                        }}else {System.out.println("No es pot jugar en mode JOEL!!");
-                        ordre[4]=true;}
-                            break;
+                        }
+                    } else {
+                        System.out.println("No es pot jugar en mode JOEL!!");
+                        ordre[4] = true;
+                    }
+                    break;
 
                 case 6:
-                    if (ordre[4] || ordre[5]) {
+                    if (ordre[4] && ordre[5] == false) {
                         Scanner entrada6 = new Scanner(System.in);
                         if (mostrar) System.out.println("Posam un nom,");
                         nom = entrada6.nextLine();
                         System.out.println("Gracies, m'agrada molt el nom de " + nom);
+                        conveses += ("Gracies, m'agrada molt el nom de " + nom);
                         nombre = nom;
                         break;
-                    }else {System.out.println("has de respondre les preguntes en ordre");
-                        break;}
-                case 7:
-                    if (ordre[5] ||ordre[6]) {
-                        System.out.println("Hem dic " + nombre + "  i soc un Alien " + tipus + ".  Em solc transportar " + vitage + ".  El meu numero favorit es el " + favorit/2 + ".");
+                    } else {
+                        System.out.println("has de respondre les preguntes en ordre");
                         break;
-                    }else {System.out.println("has de respondre les preguntes en ordre");
-                        break;}
+                    }
+                case 7:
+                    if (ordre[5] && ordre[6] == false) {
+                        System.out.println("Hem dic " + nombre + "  i soc un Alien " + tipus + ".  Em solc transportar " + vitage + ".  El meu numero favorit es el " + favorit / 2 + ".");
+                        conveses += ("Hem dic " + nombre + "  i soc un Alien " + tipus + ".  Em solc transportar " + vitage + ".  El meu numero favorit es el " + favorit / 2 + ".");
+                        break;
+                    } else {
+                        System.out.println("has de respondre les preguntes en ordre");
+                        break;
+                    }
                 case 8:
                     if (ordre[6] == true) {
                         return conveses;
-                    }else {System.out.println("has de respondre les preguntes en ordre");
-                        break;}
+                    } else {
+                        System.out.println("has de respondre les preguntes en ordre");
+                        break;
+                    }
             }
         }
     }
