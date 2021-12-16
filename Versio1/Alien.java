@@ -108,7 +108,7 @@ public class Alien {
                         ordre[1] = true;
                         break;
                     } else {
-                        System.out.println("has de respondre les preguntes en ordre");
+                        System.out.println("Has de seguir les opcions en ordre i sense repetir. Torna-ho a intentar!!");
                         break;
                     }
                 case 3:
@@ -126,7 +126,7 @@ public class Alien {
                         ordre[2] = true;
                         break;
                     } else {
-                        System.out.println("has de respondre les preguntes en ordre");
+                        System.out.println("Has de seguir les opcions en ordre i sense repetir. Torna-ho a intentar!!");
                         break;
                     }
                 case 4:
@@ -157,7 +157,7 @@ public class Alien {
                         ordre[3] = true;
                         break;
                     } else {
-                        System.out.println("has de respondre les preguntes en ordre");
+                        System.out.println("Has de seguir les opcions en ordre i sense repetir. Torna-ho a intentar!!");
 
                         break;
                     }
@@ -185,7 +185,7 @@ public class Alien {
                             }
                             while (intents <= 10);
 
-                        }
+                        }else{System.out.println("Has de seguir les opcions en ordre i sense repetir. Torna-ho a intentar!!");}
                     } else {
                         System.out.println("No es pot jugar en mode JOEL!!");
                         ordre[4] = true;
@@ -202,7 +202,7 @@ public class Alien {
                         nombre = nom;
                         break;
                     } else {
-                        System.out.println("has de respondre les preguntes en ordre");
+                        System.out.println("Has de seguir les opcions en ordre i sense repetir. Torna-ho a intentar!!");
                         break;
                     }
                 case 7:
@@ -211,14 +211,14 @@ public class Alien {
                         conveses += ("Hem dic " + nombre + "  i soc un Alien " + tipus + ".  Em solc transportar " + vitage + ".  El meu numero favorit es el " + favorit / 2 + ".");
                         break;
                     } else {
-                        System.out.println("has de respondre les preguntes en ordre");
+                        System.out.println("Has de seguir les opcions en ordre i sense repetir. Torna-ho a intentar!!");
                         break;
                     }
                 case 8:
                     if (ordre[6] == true) {
                         return conveses;
                     } else {
-                        System.out.println("has de respondre les preguntes en ordre");
+                        System.out.println("Has de seguir les opcions en ordre i sense repetir. Torna-ho a intentar!!");
                         break;
                     }
             }
