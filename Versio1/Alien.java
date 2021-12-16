@@ -40,14 +40,14 @@ public class Alien {
             if (mostrar) System.out.println("7. Pots recordar-me la nostra conversa? ");
             if (mostrar) System.out.println("8. Sortir");
 
-            opcio = entrada.nextFloat();
+            opcio = Float.parseFloat(entrada.nextLine());
 
             switch ((int) opcio) {
                 case 1:
 
 
                     if (mostrar) System.out.println("Introduix un numero float de 0-10: ");
-                    num1 = entrada.nextFloat();
+                    num1 = Float.parseFloat(entrada.nextLine());;
                     if (num1 == 0.5 || num1 == 1.5 || num1 == 2.5 || num1 == 3.5 || num1 == 4.5 || num1 == 5.5 || num1 == 6.5 || num1 == 7.5 || num1 == 8.5 || num1 == 9.5) {
                         System.out.println("Soc un alien,no m'has vist");
                         tipus = "sucubo";
@@ -62,7 +62,7 @@ public class Alien {
                 case 2:
                     if (ordre[0] && ordre[1] == false) {
                         if (mostrar) System.out.println("Introduix un numero float de 0,0-1,0: ");
-                        num1 = entrada.nextFloat();
+                        num1 = Float.parseFloat(entrada.nextLine());;
 
                         if (num1 == (float) 0.1) {
                             System.out.println("Navegant");
@@ -113,11 +113,11 @@ public class Alien {
                     }
                 case 3:
                     if (ordre[1] && ordre[2] == false) {
-                        num2 = entrada.nextFloat();
+                        num2 = Float.parseFloat(entrada.nextLine());;
                         if (mostrar) System.out.println("Quin és el teu número favorit entre 0,0 i ...?");
                         for (num = (float) 0; num < num2 / 2.0; num = (float) (num + 0.1)) {
                             System.out.printf("%2.1f ", num);
-                            //    conveses+= "%2.1f ", num;
+                            conveses+= String.format("%2.1f ", num);
                             //System.out.println(num);
                         }
                         System.out.println("...He triat el " + num2 / 2.0 + "!");
@@ -132,16 +132,28 @@ public class Alien {
                 case 4:
                     if (ordre[2] && ordre[3] == false) {
 
-                        primer = entrada.nextFloat();
-                        segon = entrada.nextFloat();
-                        for (float i = primer; i <= (float) ((primer + segon) / 2.0); i = (float) (i + 0.1)) {
-                            System.out.printf("%2.1f ", i);
-                            System.out.println();
-                            for (float j = segon; j >= (float) ((primer + segon) / 2.0); j = (float) (j - 0.1)) {
-                                System.out.printf("%2.1f ", j);
+                        float a = Float.parseFloat(entrada.nextLine());
+                        float b = Float.parseFloat(entrada.nextLine());
+                        float tempb = b;
+                        float tempa = a;
+                        while (tempa <= b) {
+                            tempb = b;
+
+                            while (a <= tempb) {
+                                float op = (tempa + tempb) / 2;
+                                if (op % 1 == 0.5) {
+                                    System.out.print(op + "\t");
+                                    conveses+=(op + "\t");
+                                }
+                                tempb -= 1;
                             }
+                            tempa += 1;
+                            System.out.print("\n");
+                            conveses+=("\n");
                         }
 
+                        System.out.print("\n");
+                        conveses+=("\n");
                         ordre[3] = true;
                         break;
                     } else {
@@ -161,7 +173,7 @@ public class Alien {
                             int intents = 0;
                             float resultat;
                             do {
-                                j1 = entrada.nextFloat();
+                                j1 = Float.parseFloat(entrada.nextLine());;
                                 resultat = j1 - baixell;
                                 if (j1 == baixell) {
                                     System.out.println("Tocat");
