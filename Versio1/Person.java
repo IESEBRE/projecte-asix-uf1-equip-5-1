@@ -19,7 +19,7 @@ public class Person {
         //variables
         //escaners
 
-        byte pregunta;
+        int pregunta;
         //nom
         String nom = "";
         //pedra paper tizora
@@ -56,13 +56,13 @@ public class Person {
             if (mostrar)System.out.println("6. Posa-li un nom:");
             if (mostrar)System.out.println("7. Pots recordar-me la nostra conversa?");
             if (mostrar)System.out.println("8. Sortida de l’aplicació.");
-            pregunta = entrada.nextByte();
+            pregunta =Integer.parseInt(entrada.nextLine());
             switch (pregunta) {
                 case 1:// 1
 
 
                    if (mostrar) System.out.println("Digues quin tipus persona soc amb un numero del 1 al 100");
-                    num = entrada.nextInt();
+                    num = Integer.parseInt(entrada.nextLine());
                     if (num % 2 == 0 && num % 3 == 0) {
                         System.out.println("No binari");
                         sexe = ("No binari");
@@ -86,7 +86,7 @@ public class Person {
                     if (ordre[0] && ordre[1]==false) {
 
                         if (mostrar) System.out.println("Digues un nombre del 1 al 10 aques sera el meu esport preferit");
-                        esport = entrada.nextInt();
+                        esport = Integer.parseInt(entrada.nextLine());
                         if (esport == 1) {
                             System.out.println("Hoquei");
                             tria = ("hoquei");
@@ -137,7 +137,7 @@ public class Person {
                     if (ordre[1] && ordre[2]==false) {
                         if (mostrar)System.out.println("donam un rang");
 
-                        num2 = entrada.nextInt();
+                        num2 = Integer.parseInt(entrada.nextLine());
                         num2 = (num2 - (num2 - num1) / 2);
                         while (num2 > num1) {
                             System.out.print("" + (num1 -1)+ " ");
@@ -153,8 +153,8 @@ public class Person {
                     if (ordre[2] && ordre[3]==false) {
 
                         if (mostrar) System.out.println("Quins dos nombres hem de multiplicar?");
-                        a = entrada.nextInt();
-                        b = entrada.nextInt();
+                        a = Integer.parseInt(entrada.nextLine());
+                        b = Integer.parseInt(entrada.nextLine());
                         for (int i = a; i <= b; i++) {
                             System.out.println();
                             conveses+="\n";
