@@ -19,11 +19,13 @@ public class Animal {
         String obci;
         String conveses = "";
         String esport = "";
-        String VLetra;
+        char VLetra;
+        char entradalletra1;
+
         while (true) {
 
             System.out.println("");
-            byte pregunta;
+            int pregunta;
             String Tipo;
 
 
@@ -40,7 +42,7 @@ public class Animal {
             if (mostrar) System.out.println("7.Pots recordar-me la nostra conversa?");
             if (mostrar) System.out.println("8.Sortida");
 
-            pregunta = entrada.nextByte();
+            pregunta = entrada.nextInt();
             switch (pregunta) {
                 case 1:
                     if (mostrar) System.out.println("Defineix quin tipus d'animal ets:");
@@ -71,45 +73,45 @@ public class Animal {
                 case 2:
                     if (ordre[0] && ordre[1] == false) {
                         if (mostrar) System.out.println("A que t'agrada jugar? ");
-                        VLetra = entrada.nextLine();
+                        VLetra = entrada.next().charAt(0);
 
-                        if (VLetra.equals("A")) {
+                        if (VLetra==('A')) {
                             System.out.println("Pilla-pilla");
                             esport = "pilla-pilla";
                         }
-                        if (VLetra.equals("B")) {
+                        if (VLetra==('B')) {
                             System.out.println("Pilota");
                             esport = "pilota";
                         }
-                        if (VLetra.equals("C")) {
+                        if (VLetra==('C')) {
                             System.out.println("Saltar");
                             esport = "saltar";
                         }
-                        if (VLetra.equals("D")) {
+                        if (VLetra==('D')) {
                             System.out.println("Circuit");
                             esport = "circuit";
                         }
-                        if (VLetra.equals("E")) {
+                        if (VLetra==('E')) {
                             System.out.println("Correr");
                             esport = "correr";
                         }
-                        if (VLetra.equals("F")) {
+                        if (VLetra==('F')) {
                             System.out.println("Dinamica");
                             esport = "dinamica";
                         }
-                        if (VLetra.equals("G")) {
+                        if (VLetra==('G')) {
                             System.out.println("Vols");
                             esport = "vols";
                         }
-                        if (VLetra.equals("H")) {
+                        if (VLetra==('H')) {
                             System.out.println("Amagar");
                             esport = "amagar";
                         }
-                        if (VLetra.equals("I")) {
+                        if (VLetra==('I')) {
                             System.out.println("Cercar");
                             esport = "cercar";
                         }
-                        if (VLetra.equals("J")) {
+                        if (VLetra==('J')) {
                             System.out.println("Estirar");
                             esport = "estirar";
                         }
@@ -132,8 +134,8 @@ public class Animal {
                         caracterfinal = (char) (contador + 'A');
 
                         while (impresio != (char) (contador + 'A')) {
-                            System.out.print(impresio + ",");
-                            conveses += (impresio + ",");
+                            System.out.print(impresio + " ");
+                            conveses += (impresio + " ");
                             ++impresio;
 
                         }
@@ -147,9 +149,29 @@ public class Animal {
                     }
                 case 4:
                     if (ordre[2] && ordre[3] == false) {
+                        char lletra1, lletra2;
+                        if (mostrar)System.out.println("Disme una lletra de la A a la Z");
+
+                        lletra1 = entrada.next().charAt(0);
+                        if (mostrar)System.out.println("Disme una segona lletra més gran que l'anterior dins del rang de la A a la Z");
+
+                        lletra2 = entrada.next().charAt(0);
+
+                        if ((((lletra1 - 'A') + (lletra2 - 'A') + 'A') % 2 == 0) && (((lletra1 - 'A') + (lletra2 - 'A') + 'A') <= 'Z')) {
+                            for (int contador1 = lletra1; contador1 < lletra2; contador1++) {
+                                System.out.printf((char) (contador1) + "   ");
+                                conveses += String.format((char) (contador1) + "   ");
+                                for (int contador2 = lletra2; contador2 > contador1; contador2--) {
+                                    System.out.printf((char) (contador2) + "   ");
+                                    conveses += String.format((char) (contador2) + "   ");
+                                }
+                                System.out.println();
+                                conveses += "\n";
+                            }
+                        }
+
                         ordre[3] = true;
                         break;
-
                     } else {
                         System.out.println("Has de seguir les opcions en ordre i sense repetir. Torna-ho a intentar!!");
 
@@ -199,6 +221,7 @@ public class Animal {
                         if (mostrar) System.out.println("Dona'm un nom");
 
                         nomguardar = entrada.nextLine();
+                        nomguardar = entrada.nextLine();
                         System.out.println("Gracies, m'agrada molt el nom de " + nomguardar);
                         conveses += ("Gracies, m'agrada molt el nom de " + nomguardar);
                         ordre[5] = true;
@@ -231,4 +254,3 @@ public class Animal {
 
     }
 }
-
