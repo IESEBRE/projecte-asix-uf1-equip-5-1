@@ -21,7 +21,7 @@ public class Main {
             if (mostrar) System.out.println("1. Conversar.");
             if (mostrar) System.out.println("2. Mostrar conversa.");
             if (mostrar) System.out.println("3. Sortir del programa.");
-            switch (entrada.nextInt()) {
+            switch (Integer.parseInt(entrada.nextLine())) {
 
                 case 1:
                     if(num==0) {System.out.println("No pots fer mes converses!!");break;}
