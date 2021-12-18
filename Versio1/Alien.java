@@ -27,6 +27,7 @@ public class Alien {
         String nom;
         String conveses = "";
         String obcio;
+        int intents = 0;
         while (true) {
             if (mostrar) System.out.println("1. Quin tipus d’extraterrestre ets? ");
             if (mostrar) System.out.println("2. Com et desplaces? ");
@@ -170,17 +171,21 @@ public class Alien {
                             Random random = new Random();
                             float baixell = random.nextFloat() * (fi - in);
                             baixell = Math.round(baixell * 10.0F) / 10.0F;
-                            int intents = 0;
+
                             float resultat;
                             do {
                                 j1 = Float.parseFloat(entrada.nextLine());;
                                 resultat = j1 - baixell;
                                 if (j1 == baixell) {
                                     System.out.println("Tocat");
+                                    conveses+=("Tocat");
                                     break;
-                                } else if (resultat <= 0.3F) System.out.println("Estas a prop");
-                                else if (resultat > 0.3F && resultat <= 1.0F) System.out.println("Estas a lluny");
-                                else if (resultat > 1.0F) System.out.println("Estas mooolt lluny");
+                                } else if (resultat <= 0.3F){ System.out.println("Estas a prop");
+                                    conveses+=("Estas a prop");}
+                                else if (resultat > 0.3F && resultat <= 1.0F) {System.out.println("Estas a lluny");
+                                    conveses+=("Estas a lluny");}
+                                else if (resultat > 1.0F) {System.out.println("Estas mooolt lluny");
+                                    conveses+=("Estas mooolt lluny");}
                                 intents++;
                             }
                             while (intents <= 10);
@@ -209,6 +214,10 @@ public class Alien {
                     if (ordre[5] && ordre[6] == false) {
                         System.out.println("Hem dic " + nombre + "  i soc un Alien " + tipus + ".  Em solc transportar " + vitage + ".  El meu numero favorit es el " + favorit / 2 + ".");
                         conveses += ("Hem dic " + nombre + "  i soc un Alien " + tipus + ".  Em solc transportar " + vitage + ".  El meu numero favorit es el " + favorit / 2 + ".");
+                        if (mostrar){
+                            System.out.println("ho has intentat "+intents+" vegades");
+                            conveses+=("ho has intentat "+intents+" vegades");
+                        }
                         break;
                     } else {
                         System.out.println("Has de seguir les opcions en ordre i sense repetir. Torna-ho a intentar!!");
